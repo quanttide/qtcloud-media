@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Coding 小红书图片集</title>
+    <style>
+        @page {
+            size: 1080px 1440px;
+            margin: 0;
+        }
+        .page {
+            width: 1080px;
+            height: 1440px;
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+            box-sizing: border-box;
+            padding: 80px 60px;
+            color: #333;
+        }
+        .cover {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff4757 50%, #ff3344 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .cover h1 {
+            font-size: 120px;
+            margin: 0;
+            text-shadow: 4px 4px 20px rgba(0,0,0,0.3);
+        }
+        .cover p {
+            font-size: 48px;
+            opacity: 0.9;
+            margin-top: 30px;
+        }
+        .cover .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 20px 40px;
+            border-radius: 50px;
+            font-size: 36px;
+            margin-top: 60px;
+        }
+        .compare {
+            background: #fff;
+        }
+        .compare h2 {
+            font-size: 64px;
+            color: #ff4757;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .compare-box {
+            display: flex;
+            gap: 40px;
+            height: calc(100% - 200px);
+        }
+        .compare-item {
+            flex: 1;
+            border-radius: 30px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+        }
+        .compare-item.left {
+            background: #f0f0f0;
+        }
+        .compare-item.right {
+            background: #fff5f5;
+            border: 4px solid #ff4757;
+        }
+        .compare-item h3 {
+            font-size: 44px;
+            margin: 0 0 30px 0;
+        }
+        .compare-item ul {
+            font-size: 32px;
+            line-height: 2;
+            padding-left: 40px;
+        }
+        .step {
+            background: linear-gradient(180deg, #fff 0%, #fff5f5 100%);
+        }
+        .step-num {
+            width: 120px;
+            height: 120px;
+            background: #ff4757;
+            color: white;
+            font-size: 72px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            margin-bottom: 40px;
+        }
+        .step h2 {
+            font-size: 56px;
+            color: #333;
+            margin: 0 0 40px 0;
+        }
+        .step ul {
+            font-size: 36px;
+            line-height: 2.2;
+            padding-left: 40px;
+        }
+        .step li {
+            margin: 20px 0;
+        }
+        .tip-box {
+            background: #fff5f5;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px 0;
+            font-size: 32px;
+        }
+        .mistake {
+            background: #fff;
+        }
+        .mistake h2 {
+            font-size: 64px;
+            color: #ff4757;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .mistake-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 40px 0;
+            background: #fffbf0;
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 8px solid #f39c12;
+        }
+        .mistake-num {
+            font-size: 48px;
+            font-weight: bold;
+            color: #f39c12;
+            margin-right: 30px;
+        }
+        .mistake-content {
+            flex: 1;
+        }
+        .mistake-content h3 {
+            font-size: 40px;
+            margin: 0 0 20px 0;
+        }
+        .mistake-content p {
+            font-size: 32px;
+            color: #666;
+            margin: 0;
+        }
+        .timeline {
+            background: linear-gradient(180deg, #fff5f5 0%, #fff 100%);
+        }
+        .timeline h2 {
+            font-size: 56px;
+            color: #ff4757;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+            font-size: 36px;
+        }
+        .timeline-week {
+            background: #ff4757;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 15px;
+            font-weight: bold;
+            margin-right: 30px;
+            min-width: 180px;
+            text-align: center;
+        }
+        .timeline-content {
+            flex: 1;
+        }
+        .cta {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .cta h1 {
+            font-size: 72px;
+            margin: 0 0 40px 0;
+        }
+        .cta p {
+            font-size: 40px;
+            opacity: 0.9;
+        }
+        .cta .btn {
+            background: white;
+            color: #ff4757;
+            padding: 30px 60px;
+            border-radius: 50px;
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: 60px;
+        }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .tool-card {
+            background: #fff;
+            border: 3px solid #eee;
+            border-radius: 20px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .tool-card h3 {
+            font-size: 36px;
+            margin: 20px 0;
+        }
+        .tool-card p {
+            font-size: 28px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- 第1页：封面 -->
+    <div class="page cover">
+        <h1>🌟 Vibe Coding</h1>
+        <p>编程新手的 AI 入门指南</p>
+        <div class="tag">零基础也能学会</div>
+    </div>
+
+    <!-- 第2页：对比 -->
+    <div class="page compare">
+        <h2>传统 vs Vibe Coding</h2>
+        <div class="compare-box">
+            <div class="compare-item left">
+                <h3>❌ 传统编程</h3>
+                <ul>
+                    <li>学编程语言</li>
+                    <li>自己写代码</li>
+                    <li>调试修复bug</li>
+                    <li>周期长、易放弃</li>
+                </ul>
+            </div>
+            <div class="compare-item right">
+                <h3>✅ Vibe Coding</h3>
+                <ul>
+                    <li>描述需求</li>
+                    <li>AI 生成代码</li>
+                    <li>审查和调整</li>
+                    <li>快速出成果</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第3页：工具选择 -->
+    <div class="page step">
+        <div class="step-num">1</div>
+        <h2>选择你的 AI 工具</h2>
+        <div class="tool-grid">
+            <div class="tool-card">
+                <h3>🤖 Cursor</h3>
+                <p>最流行的 AI IDE</p>
+            </div>
+            <div class="tool-card">
+                <h3>🌊 Windsurf</h3>
+                <p>注重体验的编辑器</p>
+            </div>
+            <div class="tool-card">
+                <h3>💻 GitHub Copilot</h3>
+                <p>VS Code 集成</p>
+            </div>
+        </div>
+        <div class="tip-box">
+            💡 新手推荐从 Cursor 开始，社区活跃，教程多
+        </div>
+    </div>
+
+    <!-- 第4页：从小项目开始 -->
+    <div class="page step">
+        <div class="step-num">2</div>
+        <h2>从小项目开始</h2>
+        <ul>
+            <li>🚫 不要一开始就做复杂应用</li>
+            <li>✅ 从一个 HTML 页面、一个脚本开始</li>
+            <li>🎯 目标是跑通流程，不是做完美产品</li>
+            <li>💪 循序渐进，积累信心</li>
+        </ul>
+        <div class="tip-box">
+            💡 推荐第一个任务：做一个最简单的 todo list
+        </div>
+    </div>
+
+    <!-- 第5页：描述需求 -->
+    <div class="page step">
+        <div class="step-num">3</div>
+        <h2>学会描述需求</h2>
+        <ul>
+            <li>📝 明确告诉 AI 你要做什么</li>
+            <li>👥 说明目标用户和使用场景</li>
+            <li>🎨 描述你期望的效果</li>
+            <li>🔄 迭代优化，不要一次到位</li>
+        </ul>
+        <div class="tip-box">
+            💡 好的 Prompt 是成功的一半！
+        </div>
+    </div>
+
+    <!-- 第6页：常见误区 -->
+    <div class="page mistake">
+        <h2>新手不要踩这些坑</h2>
+        <div class="mistake-item">
+            <div class="mistake-num">01</div>
+            <div class="mistake-content">
+                <h3>❌ 完全交给 AI</h3>
+                <p>AI 是工具，不是替代品。你仍然需要理解基本概念和逻辑。</p>
+            </div>
+        </div>
+        <div class="mistake-item">
+            <div class="mistake-num">02</div>
+            <div class="mistake-content">
+                <h3>❌ 一次性生成完整项目</h3>
+                <p>建议分步骤：小功能 → 测试 → 调整 → 下一个功能。</p>
+            </div>
+        </div>
+        <div class="mistake-item">
+            <div class="mistake-num">03</div>
+            <div class="mistake-content">
+                <h3>❌ 不学习基础</h3>
+                <p>Vibe Coding 不等于不需要学编程。基础概念还是要懂的。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第7页：学习路径 -->
+    <div class="page timeline">
+        <h2>4周学习计划</h2>
+        <div class="timeline-item">
+            <div class="timeline-week">Week 1</div>
+            <div class="timeline-content">安装工具，体验 AI 补全功能</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-week">Week 2</div>
+            <div class="timeline-content">用 AI 写一个简单网页</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-week">Week 3</div>
+            <div class="timeline-content">尝试修改和完善 AI 生成的代码</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-week">Week 4</div>
+            <div class="timeline-content">做一个完整的小项目</div>
+        </div>
+        <div class="tip-box" style="margin-top: 60px;">
+            💡 精髓：边做边学，不要等到"学会"再开始
+        </div>
+    </div>
+
+    <!-- 第8页：行动号召 -->
+    <div class="page cta">
+        <h1>现在就出发！🚀</h1>
+        <p>找一个简单的想法，比如<br>「帮我写一个 todo list」</p>
+        <div class="btn">开始你的第一个项目</div>
+    </div>
+</body>
+</html>
