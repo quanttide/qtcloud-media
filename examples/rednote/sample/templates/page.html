@@ -1,0 +1,21 @@
+{% if page_type == 'cover' %}
+<div class="page cover">
+    <h1>{{ title }}</h1>
+    <p>{{ subtitle }}</p>
+</div>
+{% elif page_type == 'cta' %}
+<div class="page cta">
+    <h1>{{ title }}</h1>
+    <p>{{ subtitle }}</p>
+    <div class="tag">👆 关注我</div>
+</div>
+{% else %}
+<div class="page content">
+    <h2>{{ title }}</h2>
+    <ul>
+        {% for point in points %}
+        <li>{{ point }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}

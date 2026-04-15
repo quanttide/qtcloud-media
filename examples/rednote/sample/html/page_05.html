@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @page { size: 1080px 1440px; margin: 0; }
+        body { margin: 0; font-family: -apple-system, "PingFang SC", sans-serif; }
+        .page { width: 1080px; height: 1440px; page-break-after: always; padding: 80px; box-sizing: border-box; }
+        .cover { background: linear-gradient(135deg, #ff6b6b, #ff4757); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .cover h1 { font-size: 72px; margin: 0; }
+        .cover p { font-size: 40px; opacity: 0.9; margin-top: 30px; }
+        .cta { background: linear-gradient(135deg, #ff6b6b, #ff4757); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .cta h1 { font-size: 64px; margin: 0; }
+        .cta p { font-size: 36px; opacity: 0.9; margin: 20px 0; }
+        .cta .tag { background: white; color: #ff4757; padding: 20px 40px; border-radius: 50px; font-size: 32px; margin-top: 40px; }
+        .content { background: #fff; }
+        .content h2 { font-size: 52px; color: #333; margin-bottom: 50px; }
+        .content ul { font-size: 36px; line-height: 2.2; padding-left: 40px; }
+        .content li { margin: 24px 0; }
+    </style>
+</head>
+<body>
+<div class="page content">
+    <h2>技术实现</h2>
+    <ul><li>Python：解析 JSON，渲染 HTML</li><li>wkhtmltoimage：命令行转图片</li><li>HTML/CSS：定义小红书尺寸 1080×1440</li><li>模板系统：支持多种页面类型</li></ul>
+</div>
+</body>
+</html>

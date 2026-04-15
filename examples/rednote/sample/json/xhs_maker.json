@@ -1,0 +1,65 @@
+{
+  "title": "小红书图片生成器",
+  "subtitle": "用 Vibe Coding 制作小红书配图",
+  "pages": [
+    {
+      "type": "cover",
+      "title": "📕 小红书图片生成器",
+      "subtitle": "用 AI 批量制作笔记配图"
+    },
+    {
+      "type": "content",
+      "title": "什么是小红书图片生成器？",
+      "points": [
+        "输入 JSON → 输出小红书配图",
+        "基于 Vibe Coding 理念",
+        "无需设计基础，人人都能用"
+      ]
+    },
+    {
+      "type": "content",
+      "title": "工作流程",
+      "points": [
+        "1. 写 JSON：定义内容和结构",
+        "2. 选模板：封面/步骤/清单/对比",
+        "3. 渲染：Python 批量生成 HTML",
+        "4. 出图：命令行转 PNG"
+      ]
+    },
+    {
+      "type": "content",
+      "title": "为什么需要它？",
+      "points": [
+        "❌ 手动做图太慢，每篇笔记要 1 小时",
+        "❌ 设计软件难学，PS/Figma 门槛高",
+        "✅ 模板化生产，10 分钟出 9 图",
+        "✅ 代码驱动，修改内容只需改 JSON"
+      ]
+    },
+    {
+      "type": "content",
+      "title": "技术实现",
+      "points": [
+        "Python：解析 JSON，渲染 HTML",
+        "wkhtmltoimage：命令行转图片",
+        "HTML/CSS：定义小红书尺寸 1080×1440",
+        "模板系统：支持多种页面类型"
+      ]
+    },
+    {
+      "type": "content",
+      "title": "下一步计划",
+      "points": [
+        "支持更多模板：时间线、对比页、行动号召",
+        "接入 AI：根据主题自动生成 JSON",
+        "浏览器版本：无需安装命令行工具",
+        "小红书尺寸自动适配"
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "现在就试试！",
+      "subtitle": "关注我，下期出详细教程"
+    }
+  ]
+}

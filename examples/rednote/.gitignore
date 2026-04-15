@@ -5,7 +5,3 @@ __pycache__/
 *.egg-info/
 dist/
 build/
-output/
-*.png
-*.jpg
-*.jpeg
