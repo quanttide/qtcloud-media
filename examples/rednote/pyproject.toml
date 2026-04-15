@@ -1,0 +1,11 @@
+[project]
+name = "rednote"
+version = "0.1.0"
+description = "Rednote tools"
+requires-python = ">=3.12"
+dependencies = [
+    "playwright",
+]
+
+[tool.uv]
+dev-dependencies = []
